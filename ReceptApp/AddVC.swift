@@ -12,12 +12,12 @@ class AddVC: UIViewController {
 
     @IBOutlet weak var addTitleTxtEdit: UITextField!
     
-    
     @IBOutlet weak var addDescriptionTxtEdit: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         
     }
 

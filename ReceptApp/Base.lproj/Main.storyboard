@@ -193,6 +193,7 @@
                     <connections>
                         <outlet property="addDescriptionTxtEdit" destination="E6J-9k-foA" id="jXw-tN-3Kz"/>
                         <outlet property="addTitleTxtEdit" destination="rNo-cw-QAS" id="NfX-0U-sa9"/>
+                        <outlet property="descriptionTextEdit" destination="E6J-9k-foA" id="wQt-xC-FT5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLz-Ux-EYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
