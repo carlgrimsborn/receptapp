@@ -131,17 +131,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-9k-foA">
-                                <rect key="frame" x="38" y="196" width="338" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="Y9h-sl-39a"/>
-                                </constraints>
-                                <color key="textColor" white="0.093858506940000003" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="rNo-cw-QAS">
-                                <rect key="frame" x="38" y="146" width="338" height="30"/>
+                                <rect key="frame" x="30" y="146" width="354" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UhN-WN-sXy"/>
                                 </constraints>
@@ -150,7 +141,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdG-C9-qma">
-                                <rect key="frame" x="20" y="20" width="33" height="30"/>
+                                <rect key="frame" x="20" y="27" width="33" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lHU-Pd-LzP"/>
                                     <constraint firstAttribute="width" constant="33" id="r89-ij-n8V"/>
@@ -173,25 +164,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FVT-uj-Arr" userLabel="AddDescription">
+                                <rect key="frame" x="30" y="196" width="354" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="vaM-mo-fBu"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980390000002" green="0.14117647059999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="tYL-Wx-AOx" firstAttribute="top" secondItem="dFJ-QO-psx" secondAttribute="bottom" constant="25" id="8AX-L4-Poy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="E6J-9k-foA" secondAttribute="trailing" constant="18" id="9kr-Kb-A6b"/>
                             <constraint firstItem="wdG-C9-qma" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" id="A09-Pz-4ZQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rNo-cw-QAS" secondAttribute="trailing" constant="18" id="ErH-Hu-7OK"/>
+                            <constraint firstItem="FVT-uj-Arr" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" constant="10" id="A0q-aY-dtG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rNo-cw-QAS" secondAttribute="trailing" constant="10" id="ErH-Hu-7OK"/>
                             <constraint firstItem="tYL-Wx-AOx" firstAttribute="centerX" secondItem="yzN-6t-JuZ" secondAttribute="centerX" constant="9.5" id="HXq-bK-klX"/>
-                            <constraint firstItem="rNo-cw-QAS" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" constant="18" id="QUK-xH-wco"/>
-                            <constraint firstItem="E6J-9k-foA" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" constant="18" id="Y53-No-R7L"/>
-                            <constraint firstItem="wdG-C9-qma" firstAttribute="top" secondItem="dFJ-QO-psx" secondAttribute="bottom" id="gbi-HI-ceR"/>
+                            <constraint firstItem="rNo-cw-QAS" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" constant="10" id="QUK-xH-wco"/>
+                            <constraint firstItem="FVT-uj-Arr" firstAttribute="top" secondItem="rNo-cw-QAS" secondAttribute="bottom" constant="20" id="drn-8z-6dh"/>
                             <constraint firstItem="rNo-cw-QAS" firstAttribute="top" secondItem="tYL-Wx-AOx" secondAttribute="bottom" constant="60" id="hp8-hV-m7y"/>
-                            <constraint firstItem="E6J-9k-foA" firstAttribute="top" secondItem="rNo-cw-QAS" secondAttribute="bottom" constant="20" id="jMG-Mk-08Y"/>
                             <constraint firstItem="wdG-C9-qma" firstAttribute="leading" secondItem="yzN-6t-JuZ" secondAttribute="leadingMargin" id="kvY-pp-vQO"/>
-                            <constraint firstItem="wdG-C9-qma" firstAttribute="top" secondItem="dFJ-QO-psx" secondAttribute="bottom" id="n5J-tj-tIL"/>
+                            <constraint firstItem="wdG-C9-qma" firstAttribute="top" secondItem="dFJ-QO-psx" secondAttribute="bottom" constant="7" id="n5J-tj-tIL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FVT-uj-Arr" secondAttribute="trailing" constant="10" id="swC-1Y-wRx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addDescriptionTxtEdit" destination="E6J-9k-foA" id="jXw-tN-3Kz"/>
                         <outlet property="addTitleTxtEdit" destination="rNo-cw-QAS" id="NfX-0U-sa9"/>
                     </connections>
                 </viewController>
