@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FA3641F62BF86008182D4 /* AppDelegate.swift */; };
-		B12FA3671F62BF86008182D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FA3661F62BF86008182D4 /* ViewController.swift */; };
+		B12FA3671F62BF86008182D4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FA3661F62BF86008182D4 /* MainVC.swift */; };
 		B12FA36A1F62BF86008182D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA3681F62BF86008182D4 /* Main.storyboard */; };
 		B12FA36C1F62BF86008182D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36B1F62BF86008182D4 /* Assets.xcassets */; };
 		B12FA36F1F62BF87008182D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36D1F62BF87008182D4 /* LaunchScreen.storyboard */; };
+		B14008451F669A410065AA00 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14008441F669A410065AA00 /* AddVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B12FA3611F62BF86008182D4 /* ReceptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12FA3641F62BF86008182D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B12FA3661F62BF86008182D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B12FA3661F62BF86008182D4 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		B12FA3691F62BF86008182D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B12FA36B1F62BF86008182D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12FA36E1F62BF87008182D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12FA3701F62BF87008182D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B14008441F669A410065AA00 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,39 @@
 		B12FA3631F62BF86008182D4 /* ReceptApp */ = {
 			isa = PBXGroup;
 			children = (
+				B140083D1F6681BD0065AA00 /* Model */,
+				B140083C1F6681B00065AA00 /* View */,
+				B140083B1F6681840065AA00 /* Controller */,
 				B12FA3641F62BF86008182D4 /* AppDelegate.swift */,
-				B12FA3661F62BF86008182D4 /* ViewController.swift */,
 				B12FA3681F62BF86008182D4 /* Main.storyboard */,
 				B12FA36B1F62BF86008182D4 /* Assets.xcassets */,
 				B12FA36D1F62BF87008182D4 /* LaunchScreen.storyboard */,
 				B12FA3701F62BF87008182D4 /* Info.plist */,
 			);
 			path = ReceptApp;
+			sourceTree = "<group>";
+		};
+		B140083B1F6681840065AA00 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B12FA3661F62BF86008182D4 /* MainVC.swift */,
+				B14008441F669A410065AA00 /* AddVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B140083C1F6681B00065AA00 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B140083D1F6681BD0065AA00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +164,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12FA3671F62BF86008182D4 /* ViewController.swift in Sources */,
+				B14008451F669A410065AA00 /* AddVC.swift in Sources */,
+				B12FA3671F62BF86008182D4 /* MainVC.swift in Sources */,
 				B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +332,7 @@
 				B12FA3751F62BF87008182D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
