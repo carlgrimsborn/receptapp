@@ -14,12 +14,14 @@ class AddVC: UIViewController {
     
     @IBOutlet weak var addBtn: UIButton!
     
-    @IBOutlet weak var addDescriptionTxtEdit: UITextField!
+    @IBOutlet weak var addDescriptiontxtField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addBtn.layer.cornerRadius = 10
         addBtn.clipsToBounds = true
+        addDescriptiontxtField.layer.cornerRadius = 2
+        addDescriptiontxtField.clipsToBounds = true
         
         
     }

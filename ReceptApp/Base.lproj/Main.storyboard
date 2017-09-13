@@ -71,11 +71,11 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLB-9d-3Uu" id="KSE-zw-ftM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeTitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIa-4f-UGk">
-                                                    <rect key="frame" x="8" y="34" width="304" height="30"/>
+                                                    <rect key="frame" x="8" y="34" width="398" height="30"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -205,6 +205,7 @@
                     </view>
                     <connections>
                         <outlet property="addBtn" destination="FR8-sd-gCh" id="xUO-nV-UIc"/>
+                        <outlet property="addDescriptiontxtField" destination="FVT-uj-Arr" id="e9W-cC-Mfc"/>
                         <outlet property="addTitleTxtEdit" destination="rNo-cw-QAS" id="NfX-0U-sa9"/>
                     </connections>
                 </viewController>
