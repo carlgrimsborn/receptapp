@@ -74,19 +74,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeTitleLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIa-4f-UGk">
-                                                    <rect key="frame" x="8" y="34" width="398" height="30"/>
-                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="30"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-3x-6SC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
+                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.66274509800000003" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </scrollView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.98431372549019602" green="0.66274509803921566" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="yIa-4f-UGk" firstAttribute="trailing" secondItem="KSE-zw-ftM" secondAttribute="trailingMargin" id="3QX-oa-BXv"/>
-                                                <constraint firstItem="yIa-4f-UGk" firstAttribute="top" secondItem="KSE-zw-ftM" secondAttribute="topMargin" constant="26" id="XYX-Bd-GmH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yIa-4f-UGk" secondAttribute="bottom" constant="27.670000000000002" id="gro-gt-xgu"/>
-                                                <constraint firstItem="yIa-4f-UGk" firstAttribute="leading" secondItem="KSE-zw-ftM" secondAttribute="leadingMargin" id="rEr-Cz-8bC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q1H-3x-6SC" secondAttribute="trailing" id="HdQ-3u-PTG"/>
+                                                <constraint firstItem="Q1H-3x-6SC" firstAttribute="leading" secondItem="KSE-zw-ftM" secondAttribute="leading" id="NzG-ej-O8A"/>
+                                                <constraint firstItem="Q1H-3x-6SC" firstAttribute="top" secondItem="KSE-zw-ftM" secondAttribute="top" id="UKl-1V-nX1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q1H-3x-6SC" secondAttribute="bottom" id="oLR-zS-ZHe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -151,7 +148,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="skf-Mf-8pG"/>
+                                    <action selector="backBtnPressed:" destination="84l-iv-c7z" eventType="touchUpInside" id="VvW-hm-KQr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYL-Wx-AOx">
@@ -185,7 +182,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="CCE-V8-Qq2"/>
+                                    <action selector="addBtnPressed:" destination="84l-iv-c7z" eventType="touchUpInside" id="3LC-I4-J4U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -362,7 +359,4 @@
             <point key="canvasLocation" x="2583" y="139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="skf-Mf-8pG"/>
-    </inferredMetricsTieBreakers>
 </document>

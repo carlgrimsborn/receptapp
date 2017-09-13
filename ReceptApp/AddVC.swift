@@ -16,11 +16,18 @@ class AddVC: UIViewController {
     
     @IBOutlet weak var addDescriptiontxtField: UITextView!
     
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func addBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addBtn.layer.cornerRadius = 10
         addBtn.clipsToBounds = true
-        addDescriptiontxtField.layer.cornerRadius = 2
+        addDescriptiontxtField.layer.cornerRadius = 1
         addDescriptiontxtField.clipsToBounds = true
         
         
