@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="956.52173913043487" y="138.58695652173915"/>
         </scene>
-        <!--View Controller-->
+        <!--ViewVC-->
         <scene sceneID="oBa-Kh-n1a">
             <objects>
-                <viewController id="CmT-4H-tgs" sceneMemberID="viewController">
+                <viewController id="CmT-4H-tgs" customClass="ViewVC" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uW3-PN-vln"/>
                         <viewControllerLayoutGuide type="bottom" id="rde-NT-1d7"/>
@@ -274,12 +274,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEJ-XT-n49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="139"/>
+            <point key="canvasLocation" x="1772" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--EditVC-->
         <scene sceneID="XNl-He-7FD">
             <objects>
-                <viewController id="LZW-Wd-fdE" sceneMemberID="viewController">
+                <viewController id="LZW-Wd-fdE" customClass="EditVC" customModule="ReceptApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ktY-IG-oh3"/>
                         <viewControllerLayoutGuide type="bottom" id="sZi-ce-wf8"/>
@@ -359,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLg-wx-yiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1806" y="139"/>
+            <point key="canvasLocation" x="2583" y="139"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

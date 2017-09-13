@@ -12,6 +12,8 @@
 		B12FA36A1F62BF86008182D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA3681F62BF86008182D4 /* Main.storyboard */; };
 		B12FA36C1F62BF86008182D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36B1F62BF86008182D4 /* Assets.xcassets */; };
 		B12FA36F1F62BF87008182D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36D1F62BF87008182D4 /* LaunchScreen.storyboard */; };
+		B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419A1F696CE5002B5596 /* EditVC.swift */; };
+		B13C419D1F696D7D002B5596 /* ViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419C1F696D7D002B5596 /* ViewVC.swift */; };
 		B14008451F669A410065AA00 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14008441F669A410065AA00 /* AddVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		B12FA36B1F62BF86008182D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12FA36E1F62BF87008182D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12FA3701F62BF87008182D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B13C419A1F696CE5002B5596 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		B13C419C1F696D7D002B5596 /* ViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVC.swift; sourceTree = "<group>"; };
 		B14008441F669A410065AA00 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 			children = (
 				B12FA3661F62BF86008182D4 /* MainVC.swift */,
 				B14008441F669A410065AA00 /* AddVC.swift */,
+				B13C419A1F696CE5002B5596 /* EditVC.swift */,
+				B13C419C1F696D7D002B5596 /* ViewVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,7 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14008451F669A410065AA00 /* AddVC.swift in Sources */,
+				B13C419D1F696D7D002B5596 /* ViewVC.swift in Sources */,
 				B12FA3671F62BF86008182D4 /* MainVC.swift in Sources */,
+				B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */,
 				B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
