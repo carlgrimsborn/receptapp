@@ -22,6 +22,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jkU-Ci-Cmg">
+                                <rect key="frame" x="0.0" y="194" width="414" height="542"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.21176470589999999" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receptCell" id="PLB-9d-3Uu" customClass="RecipeCell" customModule="ReceptApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLB-9d-3Uu" id="KSE-zw-ftM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="testtxt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2T-Fk-UfB">
+                                                    <rect key="frame" x="163" y="31" width="87" height="37"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.98431372549999996" green="0.66274509800000003" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="j2T-Fk-UfB" firstAttribute="centerY" secondItem="KSE-zw-ftM" secondAttribute="centerY" id="6yo-bY-87u"/>
+                                                <constraint firstItem="j2T-Fk-UfB" firstAttribute="centerX" secondItem="KSE-zw-ftM" secondAttribute="centerX" id="edu-kz-IOO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="testText" destination="j2T-Fk-UfB" id="Zrh-Jl-Smc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recept app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6T-a9-fcQ">
                                 <rect key="frame" x="78.666666666666686" y="45" width="257" height="41"/>
                                 <constraints>
@@ -63,32 +93,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jkU-Ci-Cmg">
-                                <rect key="frame" x="0.0" y="194" width="414" height="542"/>
-                                <color key="backgroundColor" red="0.27450980390000002" green="0.14117647059999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receptCell" id="PLB-9d-3Uu">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PLB-9d-3Uu" id="KSE-zw-ftM">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-3x-6SC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
-                                                    <color key="backgroundColor" red="0.98431372549999996" green="0.66274509800000003" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </scrollView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Q1H-3x-6SC" secondAttribute="trailing" id="HdQ-3u-PTG"/>
-                                                <constraint firstItem="Q1H-3x-6SC" firstAttribute="leading" secondItem="KSE-zw-ftM" secondAttribute="leading" id="NzG-ej-O8A"/>
-                                                <constraint firstItem="Q1H-3x-6SC" firstAttribute="top" secondItem="KSE-zw-ftM" secondAttribute="top" id="UKl-1V-nX1"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q1H-3x-6SC" secondAttribute="bottom" id="oLR-zS-ZHe"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.14117647058823529" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -109,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="addRecipeBtn" destination="PUJ-5K-UhR" id="PGg-YG-8sx"/>
+                        <outlet property="bord" destination="jkU-Ci-Cmg" id="Oqq-th-tMk"/>
                         <outlet property="btntextPressed" destination="PoH-Pw-EOw" id="xte-PK-Oeh"/>
                     </connections>
                 </viewController>

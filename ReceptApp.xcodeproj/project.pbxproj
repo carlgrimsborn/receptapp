@@ -14,6 +14,8 @@
 		B12FA36F1F62BF87008182D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36D1F62BF87008182D4 /* LaunchScreen.storyboard */; };
 		B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419A1F696CE5002B5596 /* EditVC.swift */; };
 		B13C419D1F696D7D002B5596 /* ViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419C1F696D7D002B5596 /* ViewVC.swift */; };
+		B13C419F1F699156002B5596 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419E1F699156002B5596 /* RecipeCell.swift */; };
+		B13C41A11F699E4C002B5596 /* Recept.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C41A01F699E4C002B5596 /* Recept.swift */; };
 		B14008451F669A410065AA00 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14008441F669A410065AA00 /* AddVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		B12FA3701F62BF87008182D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B13C419A1F696CE5002B5596 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		B13C419C1F696D7D002B5596 /* ViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVC.swift; sourceTree = "<group>"; };
+		B13C419E1F699156002B5596 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		B13C41A01F699E4C002B5596 /* Recept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recept.swift; sourceTree = "<group>"; };
 		B14008441F669A410065AA00 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,7 @@
 		B140083C1F6681B00065AA00 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B13C419E1F699156002B5596 /* RecipeCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 		B140083D1F6681BD0065AA00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B13C41A01F699E4C002B5596 /* Recept.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 				B14008451F669A410065AA00 /* AddVC.swift in Sources */,
 				B13C419D1F696D7D002B5596 /* ViewVC.swift in Sources */,
 				B12FA3671F62BF86008182D4 /* MainVC.swift in Sources */,
+				B13C419F1F699156002B5596 /* RecipeCell.swift in Sources */,
+				B13C41A11F699E4C002B5596 /* Recept.swift in Sources */,
 				B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */,
 				B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */,
 			);
