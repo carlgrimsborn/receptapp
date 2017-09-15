@@ -63,12 +63,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-6h-cWT">
-                                <rect key="frame" x="0.0" y="194" width="414" height="1000"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1000" id="xt4-kg-QLZ"/>
-                                </constraints>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-6h-cWT">
+                                <rect key="frame" x="0.0" y="194" width="414" height="542"/>
+                                <color key="backgroundColor" red="0.27450980390000002" green="0.14117647059999999" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.18823529410000001" green="0.086274509799999996" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="receptCell" rowHeight="94" id="3kK-GT-GY0" customClass="RecipeCell" customModule="ReceptApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="94"/>
@@ -77,18 +76,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lan-jw-3Rl">
-                                                    <rect key="frame" x="8" y="36" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lan-jw-3Rl">
+                                                    <rect key="frame" x="8" y="24.333333333333329" width="400" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="IUQ-GD-9Er"/>
-                                                        <constraint firstAttribute="width" constant="42" id="Vew-wj-TjQ"/>
+                                                        <constraint firstAttribute="height" constant="45" id="IUQ-GD-9Er"/>
+                                                        <constraint firstAttribute="width" constant="400" id="Vew-wj-TjQ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.29326171870000001" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.98431372549999996" green="0.66274509800000003" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="lan-jw-3Rl" firstAttribute="centerY" secondItem="HVu-0w-rRF" secondAttribute="centerY" id="UdD-JJ-ZYO"/>
                                                 <constraint firstItem="lan-jw-3Rl" firstAttribute="leading" secondItem="HVu-0w-rRF" secondAttribute="leadingMargin" id="X2e-z9-2pn"/>
@@ -103,6 +102,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.27450980392156865" green="0.14117647058823529" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Twr-6h-cWT" secondAttribute="bottom" id="23f-6T-nhj"/>
                             <constraint firstItem="w6T-a9-fcQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Ky-rA-AX6"/>
                             <constraint firstAttribute="trailing" secondItem="PUJ-5K-UhR" secondAttribute="trailing" id="Ap6-iC-0DP"/>
                             <constraint firstItem="1jF-w9-VnJ" firstAttribute="leading" secondItem="PUJ-5K-UhR" secondAttribute="leading" constant="10" id="MfQ-fd-zAf"/>

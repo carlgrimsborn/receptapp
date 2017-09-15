@@ -30,12 +30,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let r4 = Recept(title: "helaalo", description: "hegj")
         let r5 = Recept(title: "helddlo", description: "heaj")
         let r6 = Recept(title: "heleelo", description: "hdcej")
+        let r7 = Recept(title: "heleelsso", description: "hdcvvej")
+        let r8 = Recept(title: "heleeddlo", description: "hdcssej")
             recipes.append(r1)
             recipes.append(r2)
             recipes.append(r3)
             recipes.append(r4)
             recipes.append(r5)
             recipes.append(r6)
+            recipes.append(r7)
+            recipes.append(r8)
         print(tableView.numberOfSections)
         
     }
