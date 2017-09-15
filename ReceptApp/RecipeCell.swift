@@ -11,17 +11,25 @@ import UIKit
 class RecipeCell: UITableViewCell {
     
     
+    @IBOutlet var ContentView: UIView!
+    
     @IBOutlet weak var testText: UILabel!
     
+    public var constant = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
     }
 
     func updateUI(recept: Recept){
         testText.text = recept.title
-    }
-
+        ContentView.backgroundColor = recept.color
+        }
+   
+    
+    
 }
 
 

@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 class Recept {
     private var _title: String!
     private var _description: String!
+    private var _color: UIColor!
     
     var title: String {
         return _title
@@ -19,9 +21,13 @@ class Recept {
     var description: String {
         return _description
     }
+    var color: UIColor {
+        return _color
+    }
     
-    init(title: String, description: String) {
+    init(title: String, description: String, color: UIColor) {
         _title = title
         _description = description
+        _color = color
     }
 }
