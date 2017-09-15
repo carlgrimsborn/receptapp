@@ -10,7 +10,8 @@ import UIKit
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var bord: UITableView!
+ 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addRecipeBtn: UIButton!
     @IBOutlet weak var btntextPressed: UILabel!
     
@@ -20,23 +21,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         let r1 = Recept(title: "hello", description: "hej")
-        let r2 = Recept(title: "hello", description: "hej")
-        let r3 = Recept(title: "hello", description: "hej")
-        let r4 = Recept(title: "hello", description: "hej")
-        let r5 = Recept(title: "hello", description: "hej")
-        let r6 = Recept(title: "hello", description: "hej")
+        let r2 = Recept(title: "heasdllo", description: "hrej")
+        let r3 = Recept(title: "helfflo", description: "heeej")
+        let r4 = Recept(title: "helaalo", description: "hegj")
+        let r5 = Recept(title: "helddlo", description: "heaj")
+        let r6 = Recept(title: "heleelo", description: "hdcej")
             recipes.append(r1)
             recipes.append(r2)
             recipes.append(r3)
             recipes.append(r4)
             recipes.append(r5)
             recipes.append(r6)
+        print(tableView.numberOfSections)
         
-        
-            bord.delegate = self
-            bord.dataSource = self
-
     }
     
     @IBAction func pressedAddBtnEvent() {
@@ -55,18 +56,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell", for: indexPath) as? RecipeCell{
             
-            let recipe = recipes[indexPath.row]
+            let recept = recipes[indexPath.row]
             
-            cell.updateUI(recept: recipe)
+            cell.updateUI(recept: recept)
+            
+            print(indexPath.count)
             
             return cell
         } else {
             return UITableViewCell()
+            
         }
 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(recipes.count)
         return recipes.count
     }
     

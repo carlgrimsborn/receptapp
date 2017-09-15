@@ -13,11 +13,9 @@ class RecipeCell: UITableViewCell {
     
     @IBOutlet weak var testText: UILabel!
     
-    @IBOutlet weak var recipeScrollView: UIScrollView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     func updateUI(recept: Recept){
