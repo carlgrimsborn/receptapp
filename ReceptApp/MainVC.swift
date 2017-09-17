@@ -25,14 +25,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let r1 = Recept(title: "Fried Chicken", description: "hej", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
-        let r2 = Recept(title: "Beaf", description: "hrej", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
-        let r3 = Recept(title: "Turkey", description: "heeej", color: UIColorFromHex(rgbValue: 0xfb6652), image: #imageLiteral(resourceName: "empty-plate"))
-        let r4 = Recept(title: "Loaf", description: "hegj", color: UIColorFromHex(rgbValue: 0xe1702c), image: #imageLiteral(resourceName: "empty-plate"))
-        let r5 = Recept(title: "Pork", description: "heaj", color: UIColorFromHex(rgbValue: 0x673653), image: #imageLiteral(resourceName: "empty-plate"))
-        let r6 = Recept(title: "Ribs", description: "hdcej", color: UIColorFromHex(rgbValue: 0xb0606d), image: #imageLiteral(resourceName: "empty-plate"))
-        let r7 = Recept(title: "BBQ", description: "hdcvvej", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
-        let r8 = Recept(title: "Meat", description: "hdcssej", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
+        let r1 = Recept(title: "Fried Chicken", description: "Crispy", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
+        let r2 = Recept(title: "Beaf", description: "Juicy", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
+        let r3 = Recept(title: "Turkey", description: "Tender as hell", color: UIColorFromHex(rgbValue: 0xfb6652), image: #imageLiteral(resourceName: "empty-plate"))
+        let r4 = Recept(title: "Loaf", description: "Good", color: UIColorFromHex(rgbValue: 0xe1702c), image: #imageLiteral(resourceName: "empty-plate"))
+        let r5 = Recept(title: "Pork", description: "fresh from pig", color: UIColorFromHex(rgbValue: 0x673653), image: #imageLiteral(resourceName: "empty-plate"))
+        let r6 = Recept(title: "Ribs", description: "BBQ filled", color: UIColorFromHex(rgbValue: 0xb0606d), image: #imageLiteral(resourceName: "empty-plate"))
+        let r7 = Recept(title: "BBQ", description: "Cool", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
+        let r8 = Recept(title: "Meat", description: "The best there is", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
             recipes.append(r1)
             recipes.append(r2)
             recipes.append(r3)
