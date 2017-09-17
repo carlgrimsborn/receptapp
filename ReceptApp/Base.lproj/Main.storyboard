@@ -76,38 +76,55 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="124.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Etu-kw-5Sn">
-                                                    <rect key="frame" x="152" y="8" width="109" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lan-jw-3Rl">
-                                                    <rect key="frame" x="67" y="27" width="280" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="28"/>
-                                                    <color key="textColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E3p-w2-2p7">
-                                                    <rect key="frame" x="172" y="0.0" width="69" height="124"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nf-wZ-JlQ">
-                                                    <rect key="frame" x="172" y="0.0" width="69" height="124"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGd-tb-ZvR">
-                                                    <rect key="frame" x="172" y="0.0" width="69" height="124"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Yq-MDx">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TV-Yq-MDx">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-wO-PrI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="650" height="125"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="715" height="125"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Etu-kw-5Sn">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="125" id="ETs-ZQ-9Oh"/>
+                                                                        <constraint firstAttribute="width" constant="125" id="Evc-44-BjD"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lan-jw-3Rl">
+                                                                    <rect key="frame" x="125" y="0.0" width="290" height="125"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="290" id="fvU-y9-NPP"/>
+                                                                        <constraint firstAttribute="height" constant="125" id="rG6-OX-7cW"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="28"/>
+                                                                    <color key="textColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E3p-w2-2p7">
+                                                                    <rect key="frame" x="415" y="0.0" width="100" height="125"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="125" id="A4b-tx-Pmw"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="Sbg-oC-dcK"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8nf-wZ-JlQ">
+                                                                    <rect key="frame" x="515" y="0.0" width="100" height="125"/>
+                                                                    <color key="backgroundColor" red="0.16078431372549018" green="0.88159594566993471" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="125" id="1OL-4O-tFd"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="fGB-5B-Zq8"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yGd-tb-ZvR">
+                                                                    <rect key="frame" x="615" y="0.0" width="100" height="125"/>
+                                                                    <color key="backgroundColor" red="1" green="0.88159594566993471" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="125" id="Jix-mR-hQ7"/>
+                                                                        <constraint firstAttribute="width" constant="100" id="k9G-jS-YCN"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="650" id="pQr-Wv-5wI"/>
-                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
