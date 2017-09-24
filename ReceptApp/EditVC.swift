@@ -10,8 +10,13 @@ import UIKit
 
 class EditVC: UIViewController {
 
+    @IBOutlet var saveChanges: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        saveChanges.layer.cornerRadius = 10
+        saveChanges.clipsToBounds = true
 
         // Do any additional setup after loading the view.
     }

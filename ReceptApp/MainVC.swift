@@ -10,17 +10,21 @@ import UIKit
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
- 
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addRecipeBtn: UIButton!
     @IBOutlet weak var btntextPressed: UILabel!
     
+    @IBOutlet var colorChangeBtn: UIView!
     
     var recipes = [Recept]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addRecipeBtn.layer.borderWidth = 0.5
+        addRecipeBtn.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,11 +51,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func pressedAddBtnEvent() {
         UIButton.animate(withDuration: 0.2, animations: {
-            self.addRecipeBtn.alpha = 0.5
+            self.colorChangeBtn.alpha = 0.2
             self.btntextPressed.alpha = 0.5
         })
         UIButton.animate(withDuration: 0.2, animations: {
-            self.addRecipeBtn.alpha = 1
+            self.colorChangeBtn.alpha = 0.0
             self.btntextPressed.alpha = 1
         })
     }
@@ -93,4 +97,5 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
 
+//att göra: scrollen i tableviewcell, segues runt alla skärmar, radera referenser samt tillsätt nya, de nuvarande är dåliga
 

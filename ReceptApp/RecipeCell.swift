@@ -16,6 +16,7 @@ class RecipeCell: UITableViewCell {
     
     @IBOutlet weak var testText: UILabel!
     
+    @IBOutlet var stackView: UIStackView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,6 +26,7 @@ class RecipeCell: UITableViewCell {
     func updateUI(recept: Recept){
         testText.text = recept.title
         recipeImage.image = recept.image
+        
         }
    
     

@@ -10,9 +10,11 @@ import UIKit
 
 class ViewVC: UIViewController {
 
+    @IBOutlet var editBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        editBtn.layer.cornerRadius = 10
+        editBtn.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
