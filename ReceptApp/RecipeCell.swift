@@ -21,6 +21,7 @@ class RecipeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        
     }
 
     func updateUI(recept: Recept){

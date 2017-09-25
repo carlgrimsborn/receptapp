@@ -25,8 +25,6 @@ class AddVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBtn.layer.cornerRadius = 10
-        addBtn.clipsToBounds = true
         addDescriptiontxtField.layer.cornerRadius = 1
         addDescriptiontxtField.clipsToBounds = true
         
