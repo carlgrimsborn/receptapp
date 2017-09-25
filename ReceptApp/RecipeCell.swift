@@ -24,11 +24,11 @@ class RecipeCell: UITableViewCell {
         
     }
 
-    func updateUI(recept: Recept){
-        testText.text = recept.title
-        recipeImage.image = recept.image
-        
-        }
+//    func updateUI(recept: Recept){
+//        testText.text = recept.title
+//        recipeImage.image = recept.image
+//        
+//        }
    
     
     

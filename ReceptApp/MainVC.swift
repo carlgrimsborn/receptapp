@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,7 +18,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var colorChangeBtn: UIView!
     
-    var recipes = [Recept]()
+    var posts = [Post]()
     
     
     override func viewDidLoad() {
@@ -29,23 +30,19 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let r1 = Recept(title: "Fried Chicken", description: "Crispy as hell", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
-        let r2 = Recept(title: "Beaf", description: "Juicy as hell", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
-        let r3 = Recept(title: "Turkey", description: "Tender as hell", color: UIColorFromHex(rgbValue: 0xfb6652), image: #imageLiteral(resourceName: "empty-plate"))
-        let r4 = Recept(title: "Loaf", description: "Good", color: UIColorFromHex(rgbValue: 0xe1702c), image: #imageLiteral(resourceName: "empty-plate"))
-        let r5 = Recept(title: "Pork", description: "Good", color: UIColorFromHex(rgbValue: 0x673653), image: #imageLiteral(resourceName: "empty-plate"))
-        let r6 = Recept(title: "Ribs", description: "BBQ spiced", color: UIColorFromHex(rgbValue: 0xb0606d), image: #imageLiteral(resourceName: "empty-plate"))
-        let r7 = Recept(title: "BBQ", description: "spicy", color: UIColorFromHex(rgbValue: 0xFBA953), image: #imageLiteral(resourceName: "empty-plate"))
-        let r8 = Recept(title: "Meat", description: "The best there is", color: UIColorFromHex(rgbValue: 0x62baa4), image: #imageLiteral(resourceName: "empty-plate"))
-            recipes.append(r1)
-            recipes.append(r2)
-            recipes.append(r3)
-            recipes.append(r4)
-            recipes.append(r5)
-            recipes.append(r6)
-            recipes.append(r7)
-            recipes.append(r8)
-        print(tableView.numberOfSections)
+        
+        
+        DataService.ds.REF_RECIPES.observe(.value, with: { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snapshot{
+                    print("SNAP: \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, Any> {
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict)
+                    }
+                }
+            }
+        })
         
     }
     
@@ -64,26 +61,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell", for: indexPath) as? RecipeCell{
-            
-            let recept = recipes[indexPath.row]
-            
-            cell.updateUI(recept: recept)
-            
-            
-            return cell
-        } else {
-            return UITableViewCell()
-            
-        }
-
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return recipes.count
+        return 7
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "receptCell") as! RecipeCell
+    }
+    
+
     
     
     func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
@@ -107,4 +94,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 
 //att göra: scrollen i tableviewcell, segues runt alla skärmar, radera referenser samt tillsätt nya, de nuvarande är dåliga
+
+//let r1 = Recept(title: "Fried Chicken", description: "Crispy as hell", color: UIColorFromHex(rgbValue: 0xFBA953), image: )
+//let r2 = Recept(title: "Beaf", description: "Juicy as hell", color: UIColorFromHex(rgbValue: 0x62baa4), image: )
+//let r3 = Recept(title: "Turkey", description: "Tender as hell", color: UIColorFromHex(rgbValue: 0xfb6652), image: )
+//let r4 = Recept(title: "Loaf", description: "Good", color: UIColorFromHex(rgbValue: 0xe1702c), image: )
+//let r5 = Recept(title: "Pork", description: "Good", color: UIColorFromHex(rgbValue: 0x673653), image: )
+//let r6 = Recept(title: "Ribs", description: "BBQ spiced", color: UIColorFromHex(rgbValue: 0xb0606d), image: )
+//let r7 = Recept(title: "BBQ", description: "spicy", color: UIColorFromHex(rgbValue: 0xFBA953), image: )
+//let r8 = Recept(title: "Meat", description: "The best there is", color: UIColorFromHex(rgbValue: 0x62baa4), image: )
+//recipes.append(r1)
+//recipes.append(r2)
+//recipes.append(r3)
+//recipes.append(r4)
+//recipes.append(r5)
+//recipes.append(r6)
+//recipes.append(r7)
+//recipes.append(r8)
+//print(tableView.numberOfSections)
 
