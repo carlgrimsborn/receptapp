@@ -17,13 +17,21 @@ class RecipeCell: UITableViewCell {
     @IBOutlet weak var testText: UILabel!
     
     @IBOutlet var stackView: UIStackView!
+    
+    var recipe: Recipe!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         
     }
-
+    
+    func configureCell(recipe: Recipe) {
+        self.recipe = recipe
+        self.testText.text = recipe.title
+        
+    }
+    
     
     
 }

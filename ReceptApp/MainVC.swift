@@ -71,9 +71,15 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let recipe = recipes[indexPath.row]
-        print("Recipe: \(recipe.title)")
         
-        return tableView.dequeueReusableCell(withIdentifier: "receptCell") as! RecipeCell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell") as? RecipeCell {
+            cell.configureCell(recipe: recipe)
+            return cell
+        } else {
+            return RecipeCell()
+        }
+        
+        
     }
     
 
