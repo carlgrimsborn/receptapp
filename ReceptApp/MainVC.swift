@@ -18,7 +18,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var colorChangeBtn: UIView!
     
-    var posts = [Post]()
+    var recipes = [Recipe]()
     
     
     override func viewDidLoad() {
@@ -36,12 +36,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot{
                     print("SNAP: \(snap)")
-                    if let postDict = snap.value as? Dictionary<String, Any> {
+                    if let recipeDict = snap.value as? Dictionary<String, Any> {
                         let key = snap.key
-                        let post = Post(postKey: key, postData: postDict)
+                        let recipe = Recipe(recipeKey: key, recipeData: recipeDict)
+                        self.recipes.append(recipe)
                     }
                 }
             }
+            self.tableView.reloadData()
         })
         
     }
@@ -63,10 +65,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 7
+        return recipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let recipe = recipes[indexPath.row]
+        print("Recipe: \(recipe.title)")
+        
         return tableView.dequeueReusableCell(withIdentifier: "receptCell") as! RecipeCell
     }
     

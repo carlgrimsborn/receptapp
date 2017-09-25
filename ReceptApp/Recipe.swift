@@ -1,5 +1,5 @@
 //
-//  Post.swift
+//  Recipe.swift
 //  ReceptApp
 //
 //  Created by Carl Grimsborn on 2017-09-25.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-class Post {
+class Recipe {
     
     private var _description: String!
     private var _imgUrl: String!
     private var _title: String!
-    private var _postKey: String!
+    private var _recipeKey: String!
     
     var description: String {
         return _description
@@ -27,8 +27,8 @@ class Post {
         return _title
     }
     
-    var postKey: String! {
-        return _postKey
+    var recipeKey: String! {
+        return _recipeKey
     }
     
     init(description: String, imgUrl: String, title: String) {
@@ -37,18 +37,18 @@ class Post {
         self._title = title
     }
     
-    init(postKey: String, postData: Dictionary<String, Any>) {
-        self._postKey = postKey
+    init(recipeKey: String, recipeData: Dictionary<String, Any>) {
+        self._recipeKey = recipeKey
         
-        if let description = postData["description"] as? String{
+        if let description = recipeData["description"] as? String{
             self._description = description
         }
         
-        if let imgUrl = postData["imgUrl"] as? String{
+        if let imgUrl = recipeData["imgUrl"] as? String{
             self._imgUrl = imgUrl
         }
         
-        if let title = postData["title"] as? String{
+        if let title = recipeData["title"] as? String{
             self._title = title
         }
         

@@ -26,7 +26,7 @@
 		B1EC65511F783A6700C5F68A /* BasicTextview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65501F783A6700C5F68A /* BasicTextview.swift */; };
 		B1EC65531F784F6300C5F68A /* RoundImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65521F784F6300C5F68A /* RoundImg.swift */; };
 		B1EC65571F7907EF00C5F68A /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65561F7907EF00C5F68A /* DataService.swift */; };
-		B1EC65591F79865700C5F68A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65581F79865700C5F68A /* Post.swift */; };
+		B1EC65591F79865700C5F68A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65581F79865700C5F68A /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,7 @@
 		B1EC65501F783A6700C5F68A /* BasicTextview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTextview.swift; sourceTree = "<group>"; };
 		B1EC65521F784F6300C5F68A /* RoundImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImg.swift; sourceTree = "<group>"; };
 		B1EC65561F7907EF00C5F68A /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		B1EC65581F79865700C5F68A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B1EC65581F79865700C5F68A /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D90C1E8E5443A05341B12489 /* Pods-ReceptApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceptApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B13C41A01F699E4C002B5596 /* Recept.swift */,
-				B1EC65581F79865700C5F68A /* Post.swift */,
+				B1EC65581F79865700C5F68A /* Recipe.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 				B13C419F1F699156002B5596 /* RecipeCell.swift in Sources */,
 				B1EC654D1F78379200C5F68A /* BottomBtn.swift in Sources */,
 				B13C41A11F699E4C002B5596 /* Recept.swift in Sources */,
-				B1EC65591F79865700C5F68A /* Post.swift in Sources */,
+				B1EC65591F79865700C5F68A /* Recipe.swift in Sources */,
 				B1EC65531F784F6300C5F68A /* RoundImg.swift in Sources */,
 				B1EC65511F783A6700C5F68A /* BasicTextview.swift in Sources */,
 				B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */,

@@ -24,15 +24,25 @@ class RecipeCell: UITableViewCell {
         
     }
 
-//    func updateUI(recept: Recept){
-//        testText.text = recept.title
-//        recipeImage.image = recept.image
-//        
-//        }
-   
     
     
 }
+
+
+
+
+
+
+
+
+
+
+//    func updateUI(recept: Recept){
+//        testText.text = recept.title
+//        recipeImage.image = recept.image
+//
+//        }
+
 
 
 //    override func setSelected(_ selected: Bool, animated: Bool) {
