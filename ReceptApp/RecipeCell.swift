@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RecipeCell: UITableViewCell {
     
@@ -26,12 +27,29 @@ class RecipeCell: UITableViewCell {
         
     }
     
-    func configureCell(recipe: Recipe) {
+    func configureCell(recipe: Recipe, img: UIImage? = nil) {
         self.recipe = recipe
         self.testText.text = recipe.title
         
+        if img != nil {
+            self.recipeImage.image = img
+        } else {
+                let ref = Storage.storage().reference(forURL: recipe.imgUrl)
+                ref.getData(maxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                    if error != nil {
+                        print("Recipe: unable to download image from firebase storage")
+                    } else {
+                        print("Recipe: succesfully downloaded image from firebase storage")
+                        if let imgData = data {
+                            if let img = UIImage(data: imgData){
+                                self.recipeImage.image = img
+                                MainVC.imageCache.setObject(img, forKey: recipe.imgUrl as NSString)
+                            }
+                        }
+                    }
+                })
+        }
     }
-    
     
     
 }

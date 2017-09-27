@@ -19,6 +19,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var colorChangeBtn: UIView!
     
     var recipes = [Recipe]()
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     
     override func viewDidLoad() {
@@ -33,6 +34,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         DataService.ds.REF_RECIPES.observe(.value, with: { (snapshot) in
+            
+            self.recipes = []
+            
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot{
                     print("SNAP: \(snap)")
@@ -73,13 +77,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let recipe = recipes[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell") as? RecipeCell {
-            cell.configureCell(recipe: recipe)
+            
+            if let img = MainVC.imageCache.object(forKey: recipe.imgUrl as NSString){
+                cell.configureCell(recipe: recipe, img: img)
+            } else {
+                cell.configureCell(recipe: recipe, img: nil)
+            }
             return cell
         } else {
             return RecipeCell()
         }
-        
-        
     }
     
     
@@ -89,7 +96,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let blue = CGFloat(rgbValue & 0xFF)/256.0
     
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
-        }
+    }
 
     
 }
