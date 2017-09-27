@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var addTitleTxtEdit: UITextField!
-    
-    @IBOutlet weak var addBtn: UIButton!
     
     @IBOutlet weak var addDescriptiontxtField: UITextView!
     
     @IBOutlet weak var imageAdd: UIImageView!
     
     var imagePicker: UIImagePickerController!
+    
+    var bildVald = false
     
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -31,6 +32,38 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     @IBAction func addBtnPressed(_ sender: Any) {
+        
+        guard let title = addTitleTxtEdit.text, title != "" else {
+            print("Recipe: A title must be added before posting")
+            return
+        }
+        
+        guard let img = imageAdd.image, bildVald == true else {                          //assuming a image is in the addimage image button
+            print("Recipe: A selected image must be selected")
+            return
+        }
+        
+        if let imgData = UIImageJPEGRepresentation(img, 0.2) {              //this data can be set to the firebase storage, compressed image
+            
+            let imgUid = NSUUID().uuidString
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+            
+            //posting this data to storage using the storage reference variable from DataService.swift
+            
+            DataService.ds.REF_RECIPE_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print("Recipe: Unable to upload image to Firebase Storage")
+                } else {
+                    print("Recipe: Successfully uploaded image to Firebase Storage")
+                    let downloadURL = metadata?.downloadURL()?.absoluteString               //getting url for uploaded image
+                }
+            
+            }
+        }
+        
+        
+        //dismiss the view and back to mainVC
         dismiss(animated: true, completion: nil)
     }
     
@@ -50,7 +83,8 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            imageAdd.image = image
+            imageAdd.image = image                                                      //set the image on the button to the selected img
+            bildVald = true
         } else {
             print("bad")
         }
