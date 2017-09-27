@@ -27,7 +27,7 @@ class RecipeCell: UITableViewCell {
         
     }
     
-    func configureCell(recipe: Recipe, img: UIImage? = nil) {
+    func configureCell(recipe: Recipe, img: UIImage? = nil) {                                    //function to update the UI to the cell
         self.recipe = recipe
         self.testText.text = recipe.title
         

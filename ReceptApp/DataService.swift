@@ -12,7 +12,7 @@ import Firebase
 let DB_BASE = Database.database().reference()
 let STORAGE_BASE = Storage.storage().reference()
 
-class DataService {
+class DataService {                                                     //All referenses to firebase database is here
     static let ds = DataService()
     
     //DB referenses

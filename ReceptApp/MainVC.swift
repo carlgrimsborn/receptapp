@@ -33,16 +33,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         
-        DataService.ds.REF_RECIPES.observe(.value, with: { (snapshot) in
+        DataService.ds.REF_RECIPES.observe(.value, with: { (snapshot) in        //function to set each recipes array object to db values
             
             self.recipes = []
             
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {         //snapshot works like the object of the db
                 for snap in snapshot{
                     print("SNAP: \(snap)")
-                    if let recipeDict = snap.value as? Dictionary<String, Any> {
+                    if let recipeDict = snap.value as? Dictionary<String, Any> {        //each food object has the value of a dict
                         let key = snap.key
-                        let recipe = Recipe(recipeKey: key, recipeData: recipeDict)
+                        let recipe = Recipe(recipeKey: key, recipeData: recipeDict)     //this init in Recipe is made to pass in key and dict
                         self.recipes.append(recipe)
                     }
                 }
@@ -63,23 +63,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         })
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {               //one section
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {       //number of cells
         
         return recipes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {    //Setting the UI for cell
         
         let recipe = recipes[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell") as? RecipeCell {
             
             if let img = MainVC.imageCache.object(forKey: recipe.imgUrl as NSString){
-                cell.configureCell(recipe: recipe, img: img)
+                cell.configureCell(recipe: recipe, img: img)                            //setting the image from the cache object
             } else {
                 cell.configureCell(recipe: recipe, img: nil)
             }

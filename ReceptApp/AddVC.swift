@@ -31,7 +31,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         
     }
     
-    @IBAction func addBtnPressed(_ sender: Any) {
+    @IBAction func addBtnPressed(_ sender: Any) {                               //posting to Fireabase with this IBAction
         
         guard let title = addTitleTxtEdit.text, title != "" else {
             print("Recipe: A title must be added before posting")
@@ -49,22 +49,41 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
             let metadata = StorageMetadata()
             metadata.contentType = "image/jpeg"
             
-            //posting this data to storage using the storage reference variable from DataService.swift
+            //posting this image data to Firebase storage using the storage reference variable from DataService.swift
             
             DataService.ds.REF_RECIPE_IMAGES.child(imgUid).putData(imgData, metadata: metadata) { (metadata, error) in
                 if error != nil {
                     print("Recipe: Unable to upload image to Firebase Storage")
-                } else {
+                } else {                                                                    //uploaded to storage
                     print("Recipe: Successfully uploaded image to Firebase Storage")
                     let downloadURL = metadata?.downloadURL()?.absoluteString               //getting url for uploaded image
+                    self.postToFirebase(imgUrl: downloadURL!)                               //calling postToFirebase function with inserted url. this url from firebase will later be refered by MainVCs imagecache to get the image from firebase storage
+                    
                 }
             
             }
         }
         
         
-        //dismiss the view and back to mainVC
+        //dismiss the view
         dismiss(animated: true, completion: nil)
+    }
+    
+    func postToFirebase(imgUrl: String) {                       //function for post to firebase
+        let recipe: Dictionary<String, Any> = [                 //global object
+            "description": addDescriptiontxtField.text,
+            "imgUrl": imgUrl,
+            "title": addTitleTxtEdit.text!
+        ]
+        
+        let firebaseRecipe = DataService.ds.REF_RECIPES.childByAutoId()         //ref the child
+        firebaseRecipe.setValue(recipe)                                         //set the value of this firebase value to the global object-
+                                                                                //using the the reference firebaseRecipe
+        addTitleTxtEdit.text = ""
+        addDescriptiontxtField.text = ""
+        bildVald = false
+        imageAdd.image = #imageLiteral(resourceName: "addbuttonimg")
+        
     }
     
     
