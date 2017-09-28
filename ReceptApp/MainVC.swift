@@ -42,8 +42,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     print("SNAP: \(snap)")
                     if let recipeDict = snap.value as? Dictionary<String, Any> {        //each food object has the value of a dict
                         let key = snap.key
-                        let recipe = Recipe(recipeKey: key, recipeData: recipeDict)     //this init in Recipe is made to pass in key and dict
-                        self.recipes.append(recipe)
+                        let recipe = Recipe(recipeKey: key, recipeData: recipeDict)
+                        self.recipes.append(recipe)                               //appending to recipes array from array of snaps
                     }
                 }
             }
@@ -51,6 +51,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         })
         
     }
+    
     
     @IBAction func pressedAddBtnEvent() {
         UIButton.animate(withDuration: 0.2, animations: {

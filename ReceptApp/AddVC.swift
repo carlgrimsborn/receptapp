@@ -31,7 +31,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         
     }
     
-    @IBAction func addBtnPressed(_ sender: Any) {                               //posting to Fireabase with this IBAction
+    @IBAction func addBtnPressed(_ sender: Any) {                               //posting to Firebase with this IBAction
         
         guard let title = addTitleTxtEdit.text, title != "" else {
             print("Recipe: A title must be added before posting")
@@ -76,8 +76,8 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
             "title": addTitleTxtEdit.text!
         ]
         
-        let firebaseRecipe = DataService.ds.REF_RECIPES.childByAutoId()         //ref the child
-        firebaseRecipe.setValue(recipe)                                         //set the value of this firebase value to the global object-
+        let firebaseRecipe = DataService.ds.REF_RECIPES.child(byAppendingPath: addTitleTxtEdit.text!)    //ref the child
+        firebaseRecipe.setValue(recipe)                                         //set the value of this firebase object to the global object-
                                                                                 //using the the reference firebaseRecipe
         addTitleTxtEdit.text = ""
         addDescriptiontxtField.text = ""

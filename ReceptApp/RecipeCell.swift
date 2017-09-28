@@ -20,18 +20,34 @@ class RecipeCell: UITableViewCell {
     @IBOutlet var stackView: UIStackView!
     
     var recipe: Recipe!
-
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         
     }
     
+    
+    @IBAction func trashBtnPressed(_ sender: Any) {                                 //Delete from Firebase
+        
+        if let keyString = testText.text {
+      
+            let firebaseRecipe = DataService.ds.REF_RECIPES.child(keyString)
+            firebaseRecipe.removeValue()
+            print("Recipe: Removed \(keyString) from firebase")
+            
+        }
+        
+        
+    }
+    
+    
     func configureCell(recipe: Recipe, img: UIImage? = nil) {                                    //function to update the UI to the cell
         self.recipe = recipe
         self.testText.text = recipe.title
         
-        if img != nil {
+        if img != nil {                                                                          //function for download image
             self.recipeImage.image = img
         } else {
                 let ref = Storage.storage().reference(forURL: recipe.imgUrl)

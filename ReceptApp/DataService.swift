@@ -17,7 +17,7 @@ class DataService {                                                     //All re
     
     //DB referenses
     private var _REF_BASE = DB_BASE
-    private var _REF_RECIPES = DB_BASE.child("Recipes")
+    private var _REF_RECIPES = DB_BASE.child("Recipes")                 //Refers to all recipes in Firebase
     
     //Storage referenses
     private var _REF_RECIPE_IMAGES = STORAGE_BASE.child("recipe-pics")
