@@ -17,17 +17,55 @@ class ViewVC: UIViewController {
     
     @IBOutlet weak var recipeDescription: BasicTextview!
     
+    
+    private var _selectedTitle:String = "hh"
+    private var _selectedDescription: String!
+    private var _selectedImage: UIImage!
+    
+    var selectedTitle: String {
+        get {
+            return _selectedTitle
+        } set {
+            _selectedTitle = newValue
+        }
+    }
+    
+    var selectedDescription: String {
+        get {
+            return _selectedDescription
+        } set {
+            _selectedDescription = newValue
+        }
+    }
+    
+    var selectedImage: UIImage {
+        get {
+            return _selectedImage
+        } set {
+            _selectedImage = newValue
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        recipeTitle.text = selectedTitle
     }
 
-    // Dismiss action is added
+    
     @IBAction func goBackAction(_ sender: UIButton) {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
 
+    
+    
+    
     /*
     // MARK: - Navigation
 

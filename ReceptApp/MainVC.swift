@@ -22,7 +22,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var recipes = [Recipe]()
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
-    // Creating Singleton instance on MainVC Controller
     public static var main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainVC
     
     override func viewDidLoad() {
@@ -113,22 +112,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func segueToTheViewVC(title: String, description: String, image: UIImage){
         
-        let ggagag = "jjjmm"
-        performSegue(withIdentifier: "viewVC", sender: title)
+        var arrayofRecipeParts = [Any]()
+        arrayofRecipeParts.append(title)
+        arrayofRecipeParts.append(description)
+        arrayofRecipeParts.append(image)
+        
+        performSegue(withIdentifier: "viewVC", sender: arrayofRecipeParts)
         
         func prepare(for segue: UIStoryboardSegue, sender: Any!) {
             if let destination = segue.destination as? ViewVC {
-                destination.recipeTitle.text = ggagag
-                destination.recipeImg.image = #imageLiteral(resourceName: "trashcanicon")
-                destination.recipeDescription.text = "g"
+                destination.selectedTitle = arrayofRecipeParts[0] as! String
+                destination.selectedDescription = arrayofRecipeParts[1] as! String
+                destination.selectedImage = arrayofRecipeParts[2] as! UIImage
+                
             }
             
         }
         
-    }
-    
-    @IBAction func sssssssss(_ sender: Any) {
-        segueToTheViewVC(title: "jjjj", description: "jjjj", image: #imageLiteral(resourceName: "trashcanicon"))
     }
     
     func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {

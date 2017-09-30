@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import RevealingTableViewCell
 
-// Making RecipeCell sub class of RevealingTableViewCell
+
 class RecipeCell: RevealingTableViewCell {
     
     @IBOutlet var recipeImage: UIImageView!
@@ -40,15 +40,16 @@ class RecipeCell: RevealingTableViewCell {
     
     @IBAction func viewbtnPressed(_ sender: Any) {
         
-        MainVC.main.segueToTheViewVC(title: testText.text!, description: "hdh", image: recipeImage.image!)
+        MainVC.main.segueToTheViewVC(title: testText.text!, description: passingDesc, image: recipeImage.image!)
         
     }
     
-    
+    public var passingDesc: String!
     
     func configureCell(recipe: Recipe, img: UIImage? = nil) {                                    //function to update the UI to the cell
         self.recipe = recipe
         self.testText.text = recipe.title
+        self.passingDesc = recipe.description
         
         if img != nil {                                                                          //function for download image
             self.recipeImage.image = img
