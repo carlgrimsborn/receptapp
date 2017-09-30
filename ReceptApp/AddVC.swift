@@ -21,8 +21,9 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     
     var bildVald = false
     
+    
     @IBAction func backBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     

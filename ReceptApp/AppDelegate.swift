@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+        // assigned rootViewController to the static MainVC instance
+        self.window?.rootViewController = MainVC.main
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RevealingTableViewCell
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,16 +22,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var recipes = [Recipe]()
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
+    // Creating Singleton instance on MainVC Controller
+    public static var main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainVC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         addRecipeBtn.layer.borderWidth = 0.5
         addRecipeBtn.layer.borderColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         
         
         DataService.ds.REF_RECIPES.observe(.value, with: { (snapshot) in        //function to set each recipes array object to db values
@@ -84,12 +85,51 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.configureCell(recipe: recipe, img: nil)
             }
+            
+            // assign self object to the delegate
+            cell.revealingCellDelegate = self
             return cell
         } else {
             return RecipeCell()
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let cell = tableView.cellForRow(at: indexPath) as! RecipeCell
+        
+        // Checking revealing state is open or close, if open will close, if closed, then can perform action in else section whatever you want
+        if cell.revealingState != .closed
+        {
+            cell.setRevealingState(.closed, animated: true)
+        }
+        else
+        {
+            // do something else.
+        }
+    }
+    
+    func segueToTheViewVC(title: String, description: String, image: UIImage){
+        
+        let ggagag = "jjjmm"
+        performSegue(withIdentifier: "viewVC", sender: title)
+        
+        func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+            if let destination = segue.destination as? ViewVC {
+                destination.recipeTitle.text = ggagag
+                destination.recipeImg.image = #imageLiteral(resourceName: "trashcanicon")
+                destination.recipeDescription.text = "g"
+            }
+            
+        }
+        
+    }
+    
+    @IBAction func sssssssss(_ sender: Any) {
+        segueToTheViewVC(title: "jjjj", description: "jjjj", image: #imageLiteral(resourceName: "trashcanicon"))
+    }
     
     func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
@@ -98,12 +138,26 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
         return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
     }
-
-    
 }
 
 
+// Managing Revealing section to get closed if open on scroll
+extension MainVC: UIScrollViewDelegate
+{
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        self.tableView.closeAllCells()
+    }
+}
 
+// Managing Revealing section to get closed all except the current on which pan gesture is active
+extension MainVC: RevealingTableViewCellDelegate
+{
+    func didStartPanGesture(cell: RevealingTableViewCell)
+    {
+        self.tableView.closeAllCells(exceptThisOne: cell)
+    }
+}
 
 
 

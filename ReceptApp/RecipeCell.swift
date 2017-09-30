@@ -8,8 +8,10 @@
 
 import UIKit
 import Firebase
+import RevealingTableViewCell
 
-class RecipeCell: UITableViewCell {
+// Making RecipeCell sub class of RevealingTableViewCell
+class RecipeCell: RevealingTableViewCell {
     
     @IBOutlet var recipeImage: UIImageView!
     
@@ -21,12 +23,6 @@ class RecipeCell: UITableViewCell {
     
     var recipe: Recipe!
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        
-    }
     
     
     @IBAction func trashBtnPressed(_ sender: Any) {                                 //Delete from Firebase
@@ -41,6 +37,13 @@ class RecipeCell: UITableViewCell {
         
         
     }
+    
+    @IBAction func viewbtnPressed(_ sender: Any) {
+        
+        MainVC.main.segueToTheViewVC(title: testText.text!, description: "hdh", image: recipeImage.image!)
+        
+    }
+    
     
     
     func configureCell(recipe: Recipe, img: UIImage? = nil) {                                    //function to update the UI to the cell

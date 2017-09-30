@@ -10,13 +10,23 @@ import UIKit
 
 class ViewVC: UIViewController {
 
-    @IBOutlet var editBtn: UIButton!
+    
+    @IBOutlet weak var recipeImg: RoundImg!
+    
+    @IBOutlet weak var recipeTitle: UILabel!
+    
+    @IBOutlet weak var recipeDescription: BasicTextview!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-    
+    // Dismiss action is added
+    @IBAction func goBackAction(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

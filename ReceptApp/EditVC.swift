@@ -18,6 +18,12 @@ class EditVC: UIViewController {
     }
 
 
+    // Dismiss action is added
+    @IBAction func goBackAction(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

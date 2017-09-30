@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		61B5D049A864345C9F975C99 /* Pods_ReceptApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A074F8B2B4A1A99944203A /* Pods_ReceptApp.framework */; };
+		A9B3F8FA1F7E91A7009E942E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A9B3F8F91F7E91A7009E942E /* Podfile */; };
+		A9B3F8FC1F7E91CC009E942E /* RevealingTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B3F8FB1F7E91CC009E942E /* RevealingTableViewCell.framework */; };
 		B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FA3641F62BF86008182D4 /* AppDelegate.swift */; };
 		B12FA3671F62BF86008182D4 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12FA3661F62BF86008182D4 /* MainVC.swift */; };
 		B12FA36A1F62BF86008182D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA3681F62BF86008182D4 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		A8A074F8B2B4A1A99944203A /* Pods_ReceptApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReceptApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B3F8F91F7E91A7009E942E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A9B3F8FB1F7E91CC009E942E /* RevealingTableViewCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealingTableViewCell.framework; path = "../../Library/Developer/Xcode/DerivedData/ReceptApp-hblnocluzznlguazluobnbcsiylf/Build/Products/Debug-iphoneos/RevealingTableViewCell/RevealingTableViewCell.framework"; sourceTree = "<group>"; };
 		AEB15B6133551BD382A6ECAE /* Pods-ReceptApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReceptApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp.release.xcconfig"; sourceTree = "<group>"; };
 		B12FA3611F62BF86008182D4 /* ReceptApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReceptApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12FA3641F62BF86008182D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B3F8FC1F7E91CC009E942E /* RevealingTableViewCell.framework in Frameworks */,
 				61B5D049A864345C9F975C99 /* Pods_ReceptApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +76,7 @@
 		4F128521157F24712653F419 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9B3F8FB1F7E91CC009E942E /* RevealingTableViewCell.framework */,
 				A8A074F8B2B4A1A99944203A /* Pods_ReceptApp.framework */,
 			);
 			name = Frameworks;
@@ -88,6 +94,7 @@
 		B12FA3581F62BF86008182D4 = {
 			isa = PBXGroup;
 			children = (
+				A9B3F8F91F7E91A7009E942E /* Podfile */,
 				B12FA3631F62BF86008182D4 /* ReceptApp */,
 				B12FA3621F62BF86008182D4 /* Products */,
 				5FD6A972AF6E945B73F428A6 /* Pods */,
@@ -233,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B3F8FA1F7E91A7009E942E /* Podfile in Resources */,
 				B1EC65461F77F1FD00C5F68A /* GoogleService-Info.plist in Resources */,
 				B12FA36F1F62BF87008182D4 /* LaunchScreen.storyboard in Resources */,
 				B12FA36C1F62BF86008182D4 /* Assets.xcassets in Resources */,
@@ -258,7 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B7654B59E9FF16C2E5097B85 /* [CP] Copy Pods Resources */ = {
@@ -285,6 +293,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ReceptApp/Pods-ReceptApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/RevealingTableViewCell/RevealingTableViewCell.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -292,6 +301,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealingTableViewCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -369,7 +379,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -420,7 +430,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -447,11 +457,14 @@
 			baseConfigurationReference = D90C1E8E5443A05341B12489 /* Pods-ReceptApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZJ6NLU7D3H;
 				INFOPLIST_FILE = ReceptApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CaGr.ReceptApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -461,11 +474,14 @@
 			baseConfigurationReference = AEB15B6133551BD382A6ECAE /* Pods-ReceptApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = ZJ6NLU7D3H;
 				INFOPLIST_FILE = ReceptApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CaGr.ReceptApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
