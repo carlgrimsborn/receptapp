@@ -11,7 +11,7 @@ import Firebase
 import RevealingTableViewCell
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addRecipeBtn: UIButton!
@@ -79,6 +79,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "receptCell") as? RecipeCell {
             
+            cell.cellIndex = indexPath.row
             if let img = MainVC.imageCache.object(forKey: recipe.imgUrl as NSString){
                 cell.configureCell(recipe: recipe, img: img)                            //setting the image from the cache object
             } else {
@@ -110,34 +111,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func segueToTheViewVC(title: String, description: String, image: UIImage){
+    func segueToTheViewVC(sender: UIButton) {
+        performSegue(withIdentifier: "viewVC", sender: sender)
         
-        var arrayofRecipeParts = [Any]()
-        arrayofRecipeParts.append(title)
-        arrayofRecipeParts.append(description)
-        arrayofRecipeParts.append(image)
-        
-        performSegue(withIdentifier: "viewVC", sender: arrayofRecipeParts)
-        
-        func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-            if let destination = segue.destination as? ViewVC {
-                destination.selectedTitle = arrayofRecipeParts[0] as! String
-                destination.selectedDescription = arrayofRecipeParts[1] as! String
-                destination.selectedImage = arrayofRecipeParts[2] as! UIImage
-                
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ViewVC {
+            if let senderObj = sender as? UIButton  {
+                if senderObj.accessibilityIdentifier == "VIEW" {
+                    let recipe = self.recipes[senderObj.tag]
+                    destination.recipe = recipe
+                }
             }
-            
         }
-        
     }
     
-    func UIColorFromHex(rgbValue:UInt32, alpha:Double=1.0)->UIColor {
-        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
-        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
-        let blue = CGFloat(rgbValue & 0xFF)/256.0
-    
-        return UIColor(red:red, green:green, blue:blue, alpha:CGFloat(alpha))
-    }
 }
 
 
@@ -162,26 +152,4 @@ extension MainVC: RevealingTableViewCellDelegate
 
 
 
-
-
-
-//att göra: scrollen i tableviewcell, segues runt alla skärmar, radera referenser samt tillsätt nya, de nuvarande är dåliga
-
-//let r1 = Recept(title: "Fried Chicken", description: "Crispy as hell", color: UIColorFromHex(rgbValue: 0xFBA953), image: )
-//let r2 = Recept(title: "Beaf", description: "Juicy as hell", color: UIColorFromHex(rgbValue: 0x62baa4), image: )
-//let r3 = Recept(title: "Turkey", description: "Tender as hell", color: UIColorFromHex(rgbValue: 0xfb6652), image: )
-//let r4 = Recept(title: "Loaf", description: "Good", color: UIColorFromHex(rgbValue: 0xe1702c), image: )
-//let r5 = Recept(title: "Pork", description: "Good", color: UIColorFromHex(rgbValue: 0x673653), image: )
-//let r6 = Recept(title: "Ribs", description: "BBQ spiced", color: UIColorFromHex(rgbValue: 0xb0606d), image: )
-//let r7 = Recept(title: "BBQ", description: "spicy", color: UIColorFromHex(rgbValue: 0xFBA953), image: )
-//let r8 = Recept(title: "Meat", description: "The best there is", color: UIColorFromHex(rgbValue: 0x62baa4), image: )
-//recipes.append(r1)
-//recipes.append(r2)
-//recipes.append(r3)
-//recipes.append(r4)
-//recipes.append(r5)
-//recipes.append(r6)
-//recipes.append(r7)
-//recipes.append(r8)
-//print(tableView.numberOfSections)
 

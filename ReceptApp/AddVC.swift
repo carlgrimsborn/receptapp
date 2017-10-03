@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var addTitleTxtEdit: UITextField!
     
@@ -97,8 +97,25 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         
+        self.addDescriptiontxtField.delegate = self
+        self.addTitleTxtEdit.delegate = self
         
         
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        addTitleTxtEdit.resignFirstResponder()
+        return true
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        addDescriptiontxtField.resignFirstResponder()
+        return true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

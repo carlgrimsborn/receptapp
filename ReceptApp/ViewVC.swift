@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewVC: UIViewController {
-
+    
     
     @IBOutlet weak var recipeImg: RoundImg!
     
@@ -17,43 +17,25 @@ class ViewVC: UIViewController {
     
     @IBOutlet weak var recipeDescription: BasicTextview!
     
-    
-    private var _selectedTitle:String = "hh"
-    private var _selectedDescription: String!
-    private var _selectedImage: UIImage!
-    
-    var selectedTitle: String {
-        get {
-            return _selectedTitle
-        } set {
-            _selectedTitle = newValue
-        }
-    }
-    
-    var selectedDescription: String {
-        get {
-            return _selectedDescription
-        } set {
-            _selectedDescription = newValue
-        }
-    }
-    
-    var selectedImage: UIImage {
-        get {
-            return _selectedImage
-        } set {
-            _selectedImage = newValue
-        }
-    }
-    
-    
+    var recipe: Recipe!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        recipeTitle.text = selectedTitle
+        
+        recipeTitle.text = recipe.title
+        recipeDescription.text = recipe.description
+        
+        if let img = MainVC.imageCache.object(forKey: recipe.imgUrl as NSString){
+            recipeImg.image = img
+        }
     }
-
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        recipeImg.makeImageRoundWithShadow()
+    }
     
     @IBAction func goBackAction(_ sender: UIButton) {
         
@@ -62,18 +44,5 @@ class ViewVC: UIViewController {
     
     
     
-
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

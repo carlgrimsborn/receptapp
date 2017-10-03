@@ -15,11 +15,10 @@
 		B12FA36A1F62BF86008182D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA3681F62BF86008182D4 /* Main.storyboard */; };
 		B12FA36C1F62BF86008182D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36B1F62BF86008182D4 /* Assets.xcassets */; };
 		B12FA36F1F62BF87008182D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B12FA36D1F62BF87008182D4 /* LaunchScreen.storyboard */; };
-		B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419A1F696CE5002B5596 /* EditVC.swift */; };
 		B13C419D1F696D7D002B5596 /* ViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419C1F696D7D002B5596 /* ViewVC.swift */; };
 		B13C419F1F699156002B5596 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C419E1F699156002B5596 /* RecipeCell.swift */; };
-		B13C41A11F699E4C002B5596 /* Recept.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13C41A01F699E4C002B5596 /* Recept.swift */; };
 		B14008451F669A410065AA00 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14008441F669A410065AA00 /* AddVC.swift */; };
+		B18B6FC41F802B8300698DC3 /* CellsideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B6FC31F802B8300698DC3 /* CellsideView.swift */; };
 		B1EC65461F77F1FD00C5F68A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1EC65451F77F1FD00C5F68A /* GoogleService-Info.plist */; };
 		B1EC65481F78322500C5F68A /* BasicBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC65471F78322500C5F68A /* BasicBtn.swift */; };
 		B1EC654B1F7832BA00C5F68A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EC654A1F7832BA00C5F68A /* Constant.swift */; };
@@ -43,11 +42,10 @@
 		B12FA36B1F62BF86008182D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B12FA36E1F62BF87008182D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B12FA3701F62BF87008182D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B13C419A1F696CE5002B5596 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		B13C419C1F696D7D002B5596 /* ViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewVC.swift; sourceTree = "<group>"; };
 		B13C419E1F699156002B5596 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
-		B13C41A01F699E4C002B5596 /* Recept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recept.swift; sourceTree = "<group>"; };
 		B14008441F669A410065AA00 /* AddVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
+		B18B6FC31F802B8300698DC3 /* CellsideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsideView.swift; sourceTree = "<group>"; };
 		B1EC65451F77F1FD00C5F68A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B1EC65471F78322500C5F68A /* BasicBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicBtn.swift; sourceTree = "<group>"; };
 		B1EC654A1F7832BA00C5F68A /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			children = (
 				B12FA3661F62BF86008182D4 /* MainVC.swift */,
 				B14008441F669A410065AA00 /* AddVC.swift */,
-				B13C419A1F696CE5002B5596 /* EditVC.swift */,
 				B13C419C1F696D7D002B5596 /* ViewVC.swift */,
 			);
 			name = Controller;
@@ -148,6 +145,7 @@
 				B1EC654E1F78396100C5F68A /* Basictextfield.swift */,
 				B1EC65501F783A6700C5F68A /* BasicTextview.swift */,
 				B1EC65521F784F6300C5F68A /* RoundImg.swift */,
+				B18B6FC31F802B8300698DC3 /* CellsideView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -155,7 +153,6 @@
 		B140083D1F6681BD0065AA00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B13C41A01F699E4C002B5596 /* Recept.swift */,
 				B1EC65581F79865700C5F68A /* Recipe.swift */,
 			);
 			name = Model;
@@ -266,7 +263,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7654B59E9FF16C2E5097B85 /* [CP] Copy Pods Resources */ = {
@@ -325,11 +322,10 @@
 				B1EC654F1F78396100C5F68A /* Basictextfield.swift in Sources */,
 				B13C419F1F699156002B5596 /* RecipeCell.swift in Sources */,
 				B1EC654D1F78379200C5F68A /* BottomBtn.swift in Sources */,
-				B13C41A11F699E4C002B5596 /* Recept.swift in Sources */,
 				B1EC65591F79865700C5F68A /* Recipe.swift in Sources */,
+				B18B6FC41F802B8300698DC3 /* CellsideView.swift in Sources */,
 				B1EC65531F784F6300C5F68A /* RoundImg.swift in Sources */,
 				B1EC65511F783A6700C5F68A /* BasicTextview.swift in Sources */,
-				B13C419B1F696CE5002B5596 /* EditVC.swift in Sources */,
 				B12FA3651F62BF86008182D4 /* AppDelegate.swift in Sources */,
 				B1EC65481F78322500C5F68A /* BasicBtn.swift in Sources */,
 			);
